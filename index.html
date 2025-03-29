@@ -4,137 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goutham Reddy Keesara - Senior Data Analyst</title>
-
     <style>
-        /* General reset */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body and font styles */
+        /* Body */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f7f7f7;
             color: #333;
+            line-height: 1.6;
         }
 
-        /* Header Styles */
+        /* Header and Hero Section */
         header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 40px 0;
+            background: url('https://www.example.com/hero-image.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
             text-align: center;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
+            font-weight: 700;
             margin-bottom: 10px;
         }
         header p {
             font-size: 1.2em;
+            margin-bottom: 20px;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: #34495e;
-            padding: 15px 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
+            background-color: #34495e;
+            padding: 15px;
             z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         nav ul {
-            list-style: none;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
         }
         nav ul li {
-            display: inline;
             margin: 0 20px;
         }
         nav ul li a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             transition: color 0.3s ease;
         }
         nav ul li a:hover {
             color: #1abc9c;
         }
 
-        /* Main sections */
+        /* Section Styling */
         section {
-            padding: 50px 20px;
-            text-align: center;
-            margin: 20px 0;
+            padding: 60px 20px;
+            margin: 50px 0;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         section h2 {
-            font-size: 2em;
-            color: #2c3e50;
+            font-size: 2.5em;
             margin-bottom: 20px;
+            color: #2c3e50;
         }
+
         section p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #7f8c8d;
             margin-bottom: 20px;
         }
-        section ul {
-            list-style-type: none;
-        }
 
-        /* Skills List Styling */
-        .skills ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        /* Skills Section */
+        .skills .skill-bar {
+            width: 100%;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            margin-top: 15px;
         }
-        .skills li {
-            background-color: #1abc9c;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
+        .skills .skill-bar div {
+            height: 20px;
+            border-radius: 5px;
+        }
+        .skills .skill-bar .python { width: 90%; background-color: #1abc9c; }
+        .skills .skill-bar .sql { width: 85%; background-color: #3498db; }
+        .skills .skill-bar .ml { width: 80%; background-color: #9b59b6; }
+
+        /* Project Cards */
+        .projects .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             margin: 10px;
-            font-size: 1.1em;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
-
-        /* Projects Link Styling */
-        .projects a {
+        .projects .card:hover {
+            transform: translateY(-10px);
+        }
+        .projects img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .projects .card a {
             color: #2980b9;
             text-decoration: none;
             font-size: 1.1em;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
-        .projects a:hover {
-            text-decoration: underline;
+        .projects .card a:hover {
+            color: #1abc9c;
         }
 
         /* Footer */
         footer {
-            background-color: #2c3e50;
+            background-color: #34495e;
             color: white;
             text-align: center;
             padding: 20px;
             margin-top: 30px;
         }
 
-        /* Animation for smooth scrolling */
-        section {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.5s ease-in-out;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .skills .skill-bar {
+                width: 100%;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            .projects {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
         }
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav ul {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
         <h1>Goutham Reddy Keesara</h1>
         <p>Senior Data Analyst | Machine Learning | Data Visualization | Cloud Computing</p>
@@ -162,16 +198,15 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <h2>Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Machine Learning</li>
-            <li>Tableau</li>
-            <li>AWS</li>
-            <li>R</li>
-            <li>Data Analysis</li>
-            <li>CI/CD</li>
-        </ul>
+        <p>Below are some of the key technical skills I have developed over the years:</p>
+        <div class="skill-bar"><div class="python"></div></div>
+        <p>Python (90%)</p>
+
+        <div class="skill-bar"><div class="sql"></div></div>
+        <p>SQL (85%)</p>
+
+        <div class="skill-bar"><div class="ml"></div></div>
+        <p>Machine Learning (80%)</p>
     </section>
 
     <!-- Experience Section -->
@@ -179,26 +214,31 @@
         <h2>Experience</h2>
         <p><strong>Root Insurance</strong> - Senior Data Analyst (July 2024 - Present)</p>
         <ul>
-            <li>Architected and deployed machine learning pipeline using AWS Snowflake and Redshift.</li>
-            <li>Developed dynamic reports and dashboards using Tableau and Alteryx, improving decision-making by 30%.</li>
-            <li>Streamlined digital marketing insights using Adobe Analytics API.</li>
+            <li>Architected and deployed a scalable machine learning pipeline using AWS and Snowflake.</li>
+            <li>Developed dynamic reports and dashboards using Tableau and Alteryx, improving decision-making speed by 30%.</li>
         </ul>
 
         <p><strong>Abercrombie & Fitch</strong> - Data Analyst (Jan 2023 - Jun 2024)</p>
         <ul>
-            <li>Optimized SQL queries, improving transaction processing by 30%.</li>
-            <li>Automated ETL pipelines to AWS Redshift, reducing deployment time by 50%.</li>
+            <li>Optimized SQL queries and built automated ETL pipelines to AWS Redshift, reducing deployment time by 50%.</li>
         </ul>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/gouthamreddykeesara/root-insurance-data-pipeline" target="_blank">Root Insurance Data Pipeline</a></li>
-            <li><a href="https://github.com/gouthamreddykeesara/abercrombie-fitch-sql-optimizations" target="_blank">SQL Optimizations at Abercrombie & Fitch</a></li>
-            <li><a href="https://github.com/gouthamreddykeesara/electronic-arts-data-analysis" target="_blank">Electronic Arts Data Analysis</a></li>
-        </ul>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Project 1">
+            <h3>Root Insurance Data Pipeline</h3>
+            <p>A machine learning pipeline designed to automate data ingestion, preprocessing, and model training.</p>
+            <a href="https://github.com/gouthamreddykeesara/root-insurance-data-pipeline" target="_blank">View Project</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Project 2">
+            <h3>SQL Optimizations at Abercrombie & Fitch</h3>
+            <p>Optimized SQL queries for high-volume transaction processing, improving performance by 30%.</p>
+            <a href="https://github.com/gouthamreddykeesara/abercrombie-fitch-sql-optimizations" target="_blank">View Project</a>
+        </div>
     </section>
 
     <!-- Education Section -->
@@ -213,23 +253,17 @@
     </footer>
 
     <script>
-        // Smooth scroll animation
-        const sections = document.querySelectorAll("section");
-        const observerOptions = {
-            threshold: 0.3
-        };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
         });
     </script>
 
 </body>
 </html>
+
